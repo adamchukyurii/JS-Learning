@@ -136,7 +136,7 @@ const input_string = prompt("Please enter your password: ");
 if (input_string === "Step" || input_string === "Web" || input_string === "JavaScript") {
    alert("You are Welcome!");
 } else {
-   alert("No no no, you cannot go!")
+   alert("You will not pass!")
 }
 
 const input_num = +prompt("Enter your number");
