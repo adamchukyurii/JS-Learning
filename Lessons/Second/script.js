@@ -131,13 +131,13 @@ if(num1 === num2) {
 
 // alert(space);
 
-const input_string = prompt("Please enter your password: ");
+// const input_string = prompt("Please enter your password: ");
 
-if (input_string === "Step" || input_string === "Web" || input_string === "JavaScript") {
-   alert("You are Welcome!");
-} else {
-   alert("You will not pass!")
-}
+// if (input_string === "Step" || input_string === "Web" || input_string === "JavaScript") {
+//    alert("You are Welcome!");
+// } else {
+//    alert("You will not pass!")
+// }
 
 const input_num = +prompt("Enter your number");
 
@@ -145,4 +145,17 @@ if (input_num >= 0 && input_num <= 100){
    alert("Your number is " + input_num + " and ints in diapozon");
 } else {
    alert("Your number is " + input_num + " and ints not in diapozon");
+}
+
+const first_num = +prompt("Your first number will be: ");
+const second_num = +prompt("Your second number will be: ");
+
+if (first_num != NaN && second_num != NaN){
+   if (first_num == second_num){
+      alert(`${first_num}=${second_num}`);
+   } else if (first_num < second_num){
+      alert(`${first_num}<${second_num}`);
+   } else{
+      alert(`${first_num}>${second_num}`);
+   }
 }
