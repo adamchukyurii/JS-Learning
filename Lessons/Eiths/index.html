@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo list</title>
+</head>
+<body>
+    <input type="color" name="Color" id="ColorInput">
+    <input type="date" name="Date" id="DateInput">
+    <ul id="DateList">
+        <li id="Year"></li>
+        <li id="Month"></li>
+        <li id="Day"></li>
+    </ul>
+    <form onsubmit="AddTask(event)">
+        <input type="text" placeholder="Type your task" id="TaskInput">
+        <input type="submit" value="Add">
+    </form>
+    <ul id="TaskList"></ul>
+    <script src="./script.js"></script>
+</body>
+</html>
