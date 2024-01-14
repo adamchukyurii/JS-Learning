@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <style>
+
+      body ul{
+         display: flex;
+         flex-wrap: wrap;
+         text-wrap: wrap;
+    }
+
+    figure {
+      max-width: 200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+    }
+   </style>
+</head>
+<body>
+   <form onsubmit="AddPost(event)">
+      <input type="text" placeholder="Input title" name="title" id="title">
+      <br>          
+      <input type="text" placeholder="Input body" name="body" id="body">
+      <br>         
+      <input type="number" placeholder="Input user id" name="userId" id="userId">
+      <br>
+      <input type="submit" value="submit">
+   </form>
+   <script src="./script.js"></script>
+</body>
+</html>
