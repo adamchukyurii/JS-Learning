@@ -1,0 +1,153 @@
+*, *::after, *::before {
+   margin: 0;
+   padding: 0;
+   font-family: sans-serif;
+   box-sizing: border-box;
+   list-style: none;
+   border: none;
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 50px 0;
+   background-color: rgb(145, 92, 189);
+}
+
+body h1 {
+   font-size: 26px;
+   color: #F5E6E8;
+}
+
+body form {
+   display: flex;
+   padding: 100px;
+   gap: 3em;
+   flex-direction: column;
+   width: 900px;
+   color: #F5E6E8;
+   font-size: 20px;
+   text-transform: uppercase;
+   margin: 50px 0;
+   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+   --webkit-backdrop-fillter: blur(20px);
+   backdrop-filter: blur(20px);
+   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+   border: 1px solid rgba(255, 255, 255, 0.18);
+   border-radius: 20px;
+}
+
+form label {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+label input, label select {
+   padding: 15px;
+   background-color: #D5C6E0;
+   border-radius: 5px;
+   min-width: 400px;
+}
+
+form input {
+   padding: 15px;
+   background-color: #D5C6E0;
+   border-radius: 5px;
+}
+
+#Result {
+   width: 100%;
+   display: flex;
+   max-width: 100%;
+   flex-wrap: wrap;
+   gap: 2em;
+   justify-content: center;
+   align-items: center;
+   
+}
+
+#Result li {
+   border: 2px solid #E2C044;
+   border-radius: 10px;
+   width: 400px;
+   display: flex;
+   padding: 15px;
+   height: 500px;
+   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+   --webkit-backdrop-fillter: blur(20px);
+   backdrop-filter: blur(20px);
+   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+   border: 1px solid rgba(255, 255, 255, 0.18);
+
+}
+
+#Result li div {
+   width: 40%;
+   display: inline-flex;
+   flex-direction: column;
+   gap: 3em;
+   padding: 0 0 0 20px;
+   color: #F5E6E8;
+}
+
+#Result li div button {
+   background-color: #D5C6E0;
+   padding: 15px;
+   border-radius: 8px;
+}
+
+#Result li img {
+   width: 60%;
+   border-radius: 5px;
+}
+
+#pagination {
+   padding: 50px;
+   display: flex;
+   gap: 1em;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+}
+
+#pagination button {
+   padding: 10px;
+   border-radius: 5px;
+   background-color: #D5C6E0;
+}
+
+#details {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   color: #F5E6E8;;
+}
+
+#details .info {
+   margin: 20px;
+   padding: 30px;
+   background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+   --webkit-backdrop-fillter: blur(20px);
+   backdrop-filter: blur(20px);
+   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+   border: 1px solid rgba(255, 255, 255, 0.18);
+   border-radius: 15px;
+   width: 100%;
+   display: flex;
+   gap: 3em;
+}
+
+.info__text {
+   display: flex;
+   flex-direction: column;
+   gap: 2em;   
+}
+
+.info__text div {
+   display: flex;
+   gap: 15px;
+}

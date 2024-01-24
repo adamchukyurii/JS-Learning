@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./style.css">
+   <title>Movie Searcher</title>
+</head>
+<body>
+   <h1>Search:</h1>
+   <form onsubmit="SearchContent(event)">
+      <label for="Title">Title:
+         <input type="text" name="Title" id="Title" placeholder="Enter movie/series/episode title">
+      </label>
+      <label for="Type">Type:
+         <select name="Type" id="ContentType">
+            <option value="Movie">Movie</option>
+            <option value="Series">Series</option>
+            <option value="Episode">Episode</option>
+         </select>
+      </label>
+      <input type="submit" value="Search" id="Search">
+   </form>
+   <ul id="Result"></ul>
+   <div id="pagination"></div>
+   <div id="details">
+
+   </div>
+   <script src="./script.js"></script>
+</body>
+</html>
