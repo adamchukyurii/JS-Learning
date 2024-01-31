@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Bom Dom Homework</title>
+   <style>
+
+      *, *::before, *::after {
+         margin: 0;
+         padding: 0;
+         font-family: sans-serif;
+      }
+
+      body {
+         background: #002A32;
+      }
+
+      .Slider_Range {
+         display: flex;
+         width: 250px;
+         justify-content: space-between;
+         padding: 20px;
+         align-items: center;
+      }
+
+      #Slider {
+         width: 200px;
+         height: 10px;
+         background: #8B94A3;
+         position: relative;
+         cursor: pointer;
+      }
+
+      #Handle {
+         position: absolute;
+         top: -5px;
+         background: #C6EBBE;
+         width: 20px;
+         height: 20px;
+         transition: .7s all .5 ease-in-out;
+      }
+
+      #Output {
+         color: #C6EBBE;
+         font-size: 18px;
+         font-weight: 700;
+         padding: 5px;
+         background: #00404d;
+      }
+
+      .Slide_Container {
+         position: relative;
+         width: 900px;
+         padding: 20px;
+         display: flex;
+         align-items: center;
+         height: 300px;
+         
+      }
+
+      .slider {
+         width: 300px;
+         display: flex;
+         justify-content: flex-start;
+      }
+
+      .slide {
+         min-width: 300px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      button{
+         width: 100px;
+         height: 100px;
+         border: none;
+         cursor: pointer;
+         z-index: 2;
+      }
+
+      #prevBtn {
+         background: url(./icons8-left-arrow-100.png), transparent;
+         transition: background 1s ease-in-out;
+      }
+
+      #prevBtn:hover {
+         background: url(./icons8-prev-100.png);
+      }
+
+      #nextBtn {
+         background: url(./icons8-right-arrow-100.png), transparent;
+         transition: background 1s ease-in-out;
+      }
+
+      #nextBtn:hover {
+         background: url(./icons8-right-button-100.png);
+      }
+
+      .Spoilers_Container {
+         padding: 20px;
+         width: 600px;
+      }
+      .spoiler {
+         color: #C6EBBE;
+         background: #2B061E;
+         border-radius: 5px;
+
+      }
+
+      .spoiler h3 {
+         padding: 10px;
+      }
+
+      .spoiler div {
+         color: #8B94A3;
+         border: 1px solid #601700;
+         border-radius: 5px;
+         display: none;
+      }
+
+      .spoiler_info {
+         transition: all 5s;
+         padding: 10px;
+      }
+      
+      #News_Container {
+         width: 600px;
+         overflow: scroll;
+         height: 400px;
+         background: #8B94A3;
+         padding: 20px;
+         border-radius: 20px;
+         display: flex;
+         flex-direction: column;
+         gap: 1em;
+         align-items: center;
+         margin: 20px;
+      }
+
+      .new {
+         background: #fff;
+         border-radius: 20px;
+         padding: 20px;
+      }
+
+      .new h3 {
+         font-size: 20px;
+         color: #000;
+         font-weight: bold;
+         margin: 0 0 10px 0;
+      }
+
+      .new p {
+         color: #000;
+         font-size: 16px;
+         margin: 0 0 10px 0;
+      }
+
+      .loading{
+         width: 50px;
+      }
+
+      table {
+         border-collapse: collapse;
+         border: 1px solid #8B94A3;
+         color: #C6EBBE;
+         display: none;
+      }
+
+      th, td {
+      padding: 10px;
+         border: 1px solid #8B94A3;
+         text-align: center;
+      }
+
+      #Calender_Container {
+         color: #C6EBBE;
+         width: 600px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 3em;
+         margin: 0 0 20px 0;
+      }
+      
+      #Calender_Container form {
+         display: flex;
+         flex-direction: column;
+         gap: 1em;
+      }
+
+      #Calender_Container form input {
+         background: #2B061E;
+         border: none;
+         padding: 10px;
+         color: #fff;
+         border-radius: 5px;
+         
+      }
+
+      #Calender_Container form label {
+         justify-self: center;
+      }
+
+      #Calender_Container form div {
+         display: flex;
+         gap: 2em;
+         justify-content: space-between;
+      }
+
+      #Links_Container {
+         margin: 20px;
+      }
+
+      #linksList {
+         width: 600px;
+         background: #2B061E;
+         color: #fff;
+         padding: 20px;
+         border-radius: 10px;
+         display: flex;
+         flex-direction: column;
+         gap: 2em;
+      }
+   </style>
+</head>
+<body>
+   <div class="Slider_Range">
+      <div id="Slider">
+         <div id="Handle"></div>
+      </div>
+      <p id="Output">0</p>
+   </div>
+   <div class="Slide_Container">
+         <button id="prevBtn" onclick="changeSlide(-1)"></button>
+         <div class="slider">
+            <div class="slide"><img src="./icons8-html-logo-256.svg" alt=""></div>
+            <div class="slide"><img src="./icons8-css-logo-240.svg" alt=""></div>
+            <div class="slide"><img src="./icons8-javascript-240.svg" alt=""></div>
+         </div>
+         <button id="nextBtn" onclick="changeSlide(1)"></button>
+   </div>
+   <div class="Spoilers_Container">
+         <div class="spoiler" onclick="openSpoiler(1)">
+            <h3>Why we are using lorem ipsum</h3>
+            <div class="spoiler_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ab maxime nobis doloremque. Nam ex quos dolore possimus maiores laboriosam. Blanditiis in doloremque iure repudiandae dolore vero reiciendis earum, cum quis.</div>
+         </div>
+         <div class="spoiler" onclick="openSpoiler(2)">
+            <h3>Why we are using lorem ipsum</h3>
+            <div class="spoiler_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ab maxime nobis doloremque. Nam ex quos dolore possimus maiores laboriosam. Blanditiis in doloremque iure repudiandae dolore vero reiciendis earum, cum quis.</div>
+         </div>
+         <div class="spoiler" onclick="openSpoiler(3)">
+            <h3>Why we are using lorem ipsum</h3>
+            <div class="spoiler_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ab maxime nobis doloremque. Nam ex quos dolore possimus maiores laboriosam. Blanditiis in doloremque iure repudiandae dolore vero reiciendis earum, cum quis.</div>
+         </div>
+         <div class="spoiler" onclick="openSpoiler(4)">
+            <h3>Why we are using lorem ipsum</h3>
+            <div class="spoiler_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro ab maxime nobis doloremque. Nam ex quos dolore possimus maiores laboriosam. Blanditiis in doloremque iure repudiandae dolore vero reiciendis earum, cum quis.</div>
+         </div>
+   </div>
+   <div id="News_Container">
+      <div class="new">
+         <h3>What is lorem ipsum</h3>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam debitis inventore, voluptatibus animi totam accusantium laudantium sunt molestiae consequatur atque, dolorem mollitia rem odit libero, sit maiores laboriosam laborum nihil distinctio beatae a vitae impedit dolor maxime. Repellendus illum perferendis aliquam quia ea porro iste recusandae id ullam laborum labore velit, vel nisi mollitia! Nisi, quisquam perspiciatis? Obcaecati doloribus beatae saepe a?</p>
+      </div>
+      <div class="new">
+         <h3>What is lorem ipsum</h3>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam debitis inventore, voluptatibus animi totam accusantium laudantium sunt molestiae consequatur atque, dolorem mollitia rem odit libero, sit maiores laboriosam laborum nihil distinctio beatae a vitae impedit dolor maxime. Repellendus illum perferendis aliquam quia ea porro iste recusandae id ullam laborum labore velit, vel nisi mollitia! Nisi, quisquam perspiciatis? Obcaecati doloribus beatae saepe a?</p>
+      </div>
+      <div class="new">
+         <h3>What is lorem ipsum</h3>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam debitis inventore, voluptatibus animi totam accusantium laudantium sunt molestiae consequatur atque, dolorem mollitia rem odit libero, sit maiores laboriosam laborum nihil distinctio beatae a vitae impedit dolor maxime. Repellendus illum perferendis aliquam quia ea porro iste recusandae id ullam laborum labore velit, vel nisi mollitia! Nisi, quisquam perspiciatis? Obcaecati doloribus beatae saepe a?</p>
+      </div>
+   </div>
+   <div id="Calender_Container">
+      <form onsubmit="GenrateCalendar(event)">
+         <div id="Date">
+            <label for="Month">Month: </label>
+            <input type="number" id="monthInput" name="Month" value="">
+            <label for="Year">Year: </label>
+            <input type="number" name="Year" id="yearInput">
+         </div>
+         <input type="submit" value="Generate">
+      </form>
+      <table id="calendar">
+         <thead>
+            <tr>
+               <th>Mon</th>
+               <th>Tue</th>
+               <th>Wed</th>
+               <th>Thu</th>
+               <th>Fri</th>
+               <th>Sat</th>
+               <th>Sun</th>
+            </tr>
+         </thead>
+         <tbody></tbody>
+      </table>
+   </div>
+   <div id="Links_Container">
+      <ul id="linksList">
+         <li class="link">index.html</li>
+         <li class="link">https://google.com</li>
+         <li class="link">https://itstep.org</li>
+         <li class="link">https://mystat.itstep.org</li>
+         <li class="link">/images/cat.jpg</li>
+         <li class="link">local/path</li>
+      </ul>
+   </div>
+   
+   <script src="./script.js"></script>
+</body>
+</html>
