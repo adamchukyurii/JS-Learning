@@ -285,12 +285,21 @@
          display: flex;
          width: 600px;
          justify-content: center;
+         flex-direction: column;
+         align-items: center;
          margin: 20px;
          padding: 20px;
       }
 
       #Sorting_Block table {
          width: fit-content;
+      }
+
+      #Sorting_Block label {
+         color: #C6EBBE;
+         font-size: 18px;
+         font-weight: 800;
+         margin: 0 0 20px 0;
       }
    </style>
 </head>
@@ -396,6 +405,7 @@
       <p id="textForEditing">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora atque sed consectetur maxime exercitationem ad ratione, eos molestiae iste, cupiditate iure possimus hic ab rem soluta? Officiis voluptates optio maxime voluptas natus dolore, velit illum asperiores repudiandae ipsa! Quibusdam, placeat? Tempore debitis ab harum omnis excepturi est iusto corporis, minima illo porro itaque, officiis pariatur saepe dolore quaerat eveniet quas labore repudiandae.</p>
    </div>
    <div id="Sorting_Block">
+      <label for="info">Sort Table by presing to first-row cell:</label>
       <table id="sortBy">
          <thead>
             <tr>
