@@ -2,7 +2,6 @@ const Slider = document.querySelector("#Slider");
 const Handle = document.querySelector("#Handle");
 const Output = document.querySelector("#Output");
 
-console.log(window)
 
 const updateValue = () => {
    const selectedValue = Math.round((Handle.offsetLeft / (Slider.offsetWidth - Handle.offsetWidth)) * 100);
@@ -183,7 +182,6 @@ const GenrateCalendar = (event) => {
 
 const links = document.querySelectorAll(".link");
 const re = /https/i;
-console.log(links);
 
 const new_links = Array.from(links);
 
@@ -205,3 +203,105 @@ new_links.map(function(item){
 });
 
 
+const booksList = document.querySelector("#books");
+let books = document.querySelectorAll(".book");
+let lastClickedIndex = -1;
+
+const booksArray = Array.from(books);
+
+const updateSelectedBook = () => {
+   for (let i = 0; i < booksArray.length; i++) {
+      const computedStyle = getComputedStyle(booksArray[i]);
+      if (computedStyle.backgroundColor === 'rgb(255, 169, 132)') {
+         booksArray[i].style.background = 'transparent';
+      }
+   }
+}
+
+booksArray.map((item, index) => {
+   item.addEventListener('click', function(event){
+      if (event.ctrlKey) {
+         this.style = 'background:rgb(255, 169, 132);';
+      } else if (event.shiftKey) {
+         if (lastClickedIndex !== -1) {
+            const start = Math.min(lastClickedIndex, index);
+            const end = Math.max(lastClickedIndex, index);
+
+            for (let j = start; j <= end; j++) {
+               booksArray[j].style.background = 'rgb(255, 169, 132)';
+            } 
+         } else {
+            this.style.background = 'rgb(255, 169, 132)';
+         }
+      } else if (event.altKey) {
+         this.style.background = 'transparent';
+      } else {
+         updateSelectedBook();
+         this.style = 'background: rgb(255, 169, 132)';
+      }
+
+      lastClickedIndex = index;
+   })
+})
+
+const text = document.querySelector("#textForEditing");
+let editText = document.createElement("textarea");
+const editingBlock = document.querySelector("#Editing_Block");
+
+document.addEventListener('keydown', function(event){
+   if (event.ctrlKey && event.key === 'e') {
+      event.preventDefault();
+      let textForEditing = text.textContent;
+      text.style.display = 'none';
+      editText.setAttribute('rows', '10');
+      editText.setAttribute('cols', '60');
+      editText.value = textForEditing;
+      editText.style.width = 'max-content';
+      editText.style.height = 'max-content';
+
+      editingBlock.appendChild(editText);
+
+   }
+
+   if (event.ctrlKey && event.key === 's') {
+      event.preventDefault();
+      let editedText = editText.value;
+      text.innerHTML = editedText;
+      editText.remove();
+      text.style.display = 'block';
+      text.style = 'white-space: wrap;'
+   }
+});
+
+const table = document.querySelector("#sortingBy");
+
+const infoCells = Array.from(document.querySelectorAll(".infoCells"));
+
+let peoples = [];
+let people = [];
+let start = 0;
+let end = 4;
+
+for (let i = 0; i < 4; i++) {
+   for (let j = start; j < end && j < infoCells.length; j++) {
+      people.push(infoCells[j].textContent)
+   }
+   peoples.push(people);
+   start = end;
+   end += 4;
+   people = [];
+}
+
+console.log(peoples);
+
+const SortBy = (filtr) => {
+   if (filtr === 'firstname') {
+
+   } else if (filtr === 'lastname') {
+
+   } else if (filtr === 'age') {
+
+   } else if (filtr === 'company') {
+      
+   }
+}

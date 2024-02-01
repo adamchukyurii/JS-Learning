@@ -224,6 +224,74 @@
          flex-direction: column;
          gap: 2em;
       }
+
+      #Books_List {
+         margin: 20px;
+         padding: 20px;
+         background: #8B94A3;
+         color: #000;
+         width: 900px;
+         border-radius: 15px;
+      }
+
+      #books {
+         
+      }
+
+      .book {
+         text-transform: capitalize;
+         height: 30px;
+         display: flex;
+         align-items: center;
+         padding: 10px;
+      }
+
+      .book:hover {
+         background: #2B061E;
+         color: #fff;
+         cursor: pointer;
+      }
+
+      #Editing_Block {
+         width: 600px;
+         background: #8B94A3;
+         margin: 20px;
+         padding: 20px;
+         border-radius: 15px;
+      }
+
+      #info {
+         display: flex;
+         gap: 5px;
+         flex-direction: column;
+         margin: 0 0 15px 0;
+         color: #1f1d1d86;
+      }
+
+      textarea {
+         margin: 0 0 15px 0;
+         background: #676d75;
+         border: none;
+         border-radius: 15px;
+         padding: 20px;
+         resize: none;
+      }
+
+      #sortBy{
+         display: block;
+      }
+
+      #Sorting_Block {
+         display: flex;
+         width: 600px;
+         justify-content: center;
+         margin: 20px;
+         padding: 20px;
+      }
+
+      #Sorting_Block table {
+         width: fit-content;
+      }
    </style>
 </head>
 <body>
@@ -309,7 +377,62 @@
          <li class="link">local/path</li>
       </ul>
    </div>
-   
+   <div id="Books_List">
+      <ul id="books">
+         <li class="book">"JavaScript for Kids: A Playful Introduciton" by nick morgan</li>
+         <li class="book">"eloquent javascript: a modern introduciton to programing" by marijn haverbeke</li>
+         <li class="book">"javascript: the good parts" by douglas crockford</li>
+         <li class="book">"you dont know JS" by kyle simpson</li>
+         <li class="book">"programming Javascript applications: robust wenb architecture with node, html5, and moderns js libraries" by eric elliot</li>
+         <li class="book">"Effective javascript: 68 specific way to harness the power of javascript" by david herman</li>
+         <li class="book">"javascript: the definitive guide" by david flanagan</li>
+      </ul>
+   </div>
+   <div id="Editing_Block">
+      <label for="Info" id="info">
+         <span>Press Ctrl + E for editing </span><br>
+         <span>Press Ctrl + S for saving</span>
+      </label>
+      <p id="textForEditing">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora atque sed consectetur maxime exercitationem ad ratione, eos molestiae iste, cupiditate iure possimus hic ab rem soluta? Officiis voluptates optio maxime voluptas natus dolore, velit illum asperiores repudiandae ipsa! Quibusdam, placeat? Tempore debitis ab harum omnis excepturi est iusto corporis, minima illo porro itaque, officiis pariatur saepe dolore quaerat eveniet quas labore repudiandae.</p>
+   </div>
+   <div id="Sorting_Block">
+      <table id="sortBy">
+         <thead>
+            <tr>
+               <th onclick="SortBy('firstname')">Firstname</th>
+               <th onclick="SortBy('lastname')">Lastname</th>
+               <th onclick="SortBy('age')">Age</th>
+               <th onclick="SortBy('company')">Company</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td class="infoCells">Mark</td>
+               <td class="infoCells">Zuckerberg</td>
+               <td class="infoCells">57</td>
+               <td class="infoCells">Facebook</td>
+            </tr>
+            <tr>
+               <td class="infoCells">Larry</td>
+               <td class="infoCells">Page</td>
+               <td class="infoCells">34</td>
+               <td class="infoCells">Google</td>
+            </tr>
+            <tr>
+               <td class="infoCells">Timothy</td>
+               <td class="infoCells">Cook</td>
+               <td class="infoCells">45</td>
+               <td class="infoCells">Apple</td>
+            </tr>
+            <tr>
+               <td class="infoCells">Bill</td>
+               <td class="infoCells">Gates</td>
+               <td class="infoCells">62</td>
+               <td class="infoCells">Microsoft</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
    <script src="./script.js"></script>
 </body>
 </html>
