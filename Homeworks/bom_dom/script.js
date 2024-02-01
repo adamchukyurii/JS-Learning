@@ -292,16 +292,56 @@ for (let i = 0; i < 4; i++) {
    people = [];
 }
 
-console.log(peoples);
+const sorting = (index) => {
+   let sortingBy = [];
+      let newPeoples = [];
+      for (let i = 0; i < peoples.length; i++) {
+         sortingBy.push(peoples[i][index]);
+      }
+      sortingBy.sort();
+      for (let i = 0; i < peoples.length; i++) {
+         for (let j = 0; j < peoples.length; j++) {
+            if (sortingBy[i] === peoples[j][index]) {
+               newPeoples.push(peoples[j]);
+            }
+         }
+      }
+   return newPeoples;
+}
+
+const updateTable = () => {
+   for (let i = 0; i < infoCells.length; i++) {
+      infoCells[i].innerHTML = '';
+   }
+}
+
+const generatingTable = (table) => {
+   let start = 0;
+      let end = 4;
+      updateTable();
+      for (let i = 0; i < peoples.length; i++) {
+         for (let j = start; j < end && j < infoCells.length; j++) {
+            infoCells[j].innerHTML = table[i][j - start];
+         }
+         start = end;
+         end += 4;
+      }
+}
+
 
 const SortBy = (filtr) => {
+   let newTable;
    if (filtr === 'firstname') {
-
+      newTable = sorting(0);
+      generatingTable(newTable);
    } else if (filtr === 'lastname') {
-
+      newTable = sorting(1);
+      generatingTable(newTable);
    } else if (filtr === 'age') {
-
+      newTable = sorting(2);
+      generatingTable(newTable);
    } else if (filtr === 'company') {
-      
+      newTable = sorting(3);
+      generatingTable(newTable);
    }
 }
