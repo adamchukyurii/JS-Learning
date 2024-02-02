@@ -1,0 +1,16 @@
+*, *::after, *::before {
+   margin: 0;
+   padding: 0;
+   font-family: 'Orbitron', sans-serif;
+   list-style: none;
+   text-decoration: none;
+}
+
+body, html {
+   height: 100%;
+}
+
+body {
+   overflow: hidden;
+   background: no-repeat center/cover url(../../assets/images/background.gif);
+}

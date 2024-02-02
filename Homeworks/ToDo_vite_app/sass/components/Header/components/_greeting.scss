@@ -1,0 +1,19 @@
+#header {
+   margin: 100px 0 0 0;
+   display: flex;
+   justify-content: center;
+   .header__greeting {
+      background: #fbff00bb;
+      padding: 40px;
+      clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+      h1 {
+         margin: 0 0 10px 0;
+         text-align: center;
+         background: rgb(36,11,0);
+         background: linear-gradient(90deg, rgba(36,11,0,1) 1%, rgba(121,81,9,1) 10%, rgba(120,142,40,1) 21%, rgba(59,179,54,1) 31%, rgba(36,204,116,1) 42%, rgba(29,193,215,1) 54%, rgba(23,109,224,1) 64%, rgba(41,18,231,1) 73%, rgba(139,13,238,1) 83%, rgba(243,6,247,1) 92%, rgba(255,0,148,1) 100%); 
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+      }
+   }
+}
