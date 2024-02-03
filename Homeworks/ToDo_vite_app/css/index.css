@@ -4,6 +4,8 @@
   font-family: "Orbitron", sans-serif;
   list-style: none;
   text-decoration: none;
+  color: #F75049;
+  text-shadow: 0 4px 4px;
 }
 
 body, html {
@@ -11,12 +13,28 @@ body, html {
 }
 
 body {
-  overflow: hidden;
-  background: no-repeat center/cover url(../../assets/images/background.gif);
+  position: relative;
+  background: rgb(34, 35, 37);
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100%;
 }
 
 #header {
-  margin: 100px 0 0 0;
+  width: 100%;
+  height: 82px;
+  background: no-repeat bottom center url(../../../assets/icons/headerline.svg);
+  text-align: center;
+  padding: 20px 0 20px 0;
+  background-size: 95% 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -24,19 +42,185 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
 }
-#header .header__greeting {
-  background: rgba(251, 255, 0, 0.7333333333);
-  padding: 40px;
-  -webkit-clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
-          clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+#header h1 {
+  background-image: url(../../../assets/images/infobackground.svg);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 20px;
 }
-#header .header__greeting h1 {
-  margin: 0 0 10px 0;
-  text-align: center;
-  background: rgb(36, 11, 0);
-  background: -webkit-gradient(linear, left top, right top, color-stop(1%, rgb(36, 11, 0)), color-stop(10%, rgb(121, 81, 9)), color-stop(21%, rgb(120, 142, 40)), color-stop(31%, rgb(59, 179, 54)), color-stop(42%, rgb(36, 204, 116)), color-stop(54%, rgb(29, 193, 215)), color-stop(64%, rgb(23, 109, 224)), color-stop(73%, rgb(41, 18, 231)), color-stop(83%, rgb(139, 13, 238)), color-stop(92%, rgb(243, 6, 247)), to(rgb(255, 0, 148)));
-  background: linear-gradient(90deg, rgb(36, 11, 0) 1%, rgb(121, 81, 9) 10%, rgb(120, 142, 40) 21%, rgb(59, 179, 54) 31%, rgb(36, 204, 116) 42%, rgb(29, 193, 215) 54%, rgb(23, 109, 224) 64%, rgb(41, 18, 231) 73%, rgb(139, 13, 238) 83%, rgb(243, 6, 247) 92%, rgb(255, 0, 148) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+
+#main {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+#main #InputArea {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#main #InputArea form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 2em;
+  color: #fff;
+}
+#main #InputArea form #Task {
+  width: 100%;
+  background: transparent;
+  border: 2px solid #5EF6FF;
+  padding: 20px;
+  font-size: 26px;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+#main #InputArea form #Task:focus {
+  border: 2px solid yellow;
+  -webkit-box-shadow: 4px 4px 4px yellow;
+          box-shadow: 4px 4px 4px yellow;
+  outline: none;
+  background: rgba(54, 54, 54, 0.3098039216);
+  color: yellow;
+  text-shadow: 0 4px 4px;
+}
+#main #InputArea form #Timer {
+  font-size: 26px;
+  width: 70px;
+  padding: 20px;
+  background: transparent;
+  border: 2px solid #5EF6FF;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+#main #InputArea form #Timer:focus {
+  border: 2px solid yellow;
+  -webkit-box-shadow: 4px 4px 10px 4px yellow;
+          box-shadow: 4px 4px 10px 4px yellow;
+  outline: none;
+  background: rgba(54, 54, 54, 0.3098039216);
+  color: yellow;
+  text-shadow: 0 4px 4px;
+}
+#main #InputArea form #AddTask {
+  padding: 20px;
+  font-size: 26px;
+  background: transparent;
+  border: 1px solid #5EF6FF;
+  cursor: pointer;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+#main #InputArea form #AddTask:hover {
+  background: rgba(54, 54, 54, 0.3098039216);
+}
+#main #InputArea form #AddTask:focus {
+  border: 2px solid yellow;
+  -webkit-box-shadow: 4px 4px 10px 4px yellow;
+          box-shadow: 4px 4px 10px 4px yellow;
+  background: rgba(54, 54, 54, 0.3098039216);
+  color: yellow;
+  text-shadow: 0 4px 4px;
+}
+#main #TasksArea {
+  margin: 50px 0 50px 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-perspective: 500px;
+          perspective: 500px;
+}
+#main #TasksArea #Tasks {
+  border: 2px solid yellow;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 52%;
+  -webkit-transform: rotatex(10deg);
+          transform: rotatex(10deg);
+}
+#main #TasksArea #Tasks li {
+  border: 1px solid #F75049;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 95%;
+}
+#main #TasksArea #Tasks span {
+  font-size: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+#main #TasksArea #Tasks span img {
+  width: 30px;
+  border: 2px solid #5EF6FF;
+  padding: 10px;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+#main #TasksArea #Tasks span img:hover {
+  cursor: pointer;
+  background: rgba(54, 54, 54, 0.3098039216);
+  -webkit-box-shadow: 4px 4px 4px yellow;
+          box-shadow: 4px 4px 4px yellow;
+  border: 2px solid yellow;
+}
+
+#redCircle {
+  top: -113px;
+  left: -228px;
+  width: 985px;
+  height: 612px;
+  position: absolute;
+  background-image: url(../../../assets/images/background.svg);
+  z-index: -1;
+}
+
+#footer {
+  width: 100%;
+  height: 82px;
+  background-image: url(../../../assets/icons/footerline.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 95% 100%;
 }

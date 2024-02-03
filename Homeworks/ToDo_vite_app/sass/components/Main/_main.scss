@@ -1,0 +1,129 @@
+
+
+#main {
+   width: 100%;
+   flex: 1 0 auto;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   flex-direction: column;
+   
+   #InputArea {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      form {
+         display: flex;
+         justify-content: space-between;
+         gap: 2em;
+         color: #fff;
+
+         #Task {
+            width: 100%;
+            background: transparent;
+            border: 2px solid #5EF6FF;
+            padding: 20px;
+            font-size: 26px;
+            transition: .5s all;
+            &:focus {
+               border: 2px solid yellow;
+               box-shadow: 4px 4px 4px yellow;
+               outline: none;
+               background: #3636364f;
+               color: yellow;
+               text-shadow: 0 4px 4px;
+            }
+         }
+   
+         #Timer {
+            font-size: 26px;
+            width: 70px;
+            padding: 20px;
+            background: transparent;
+            border: 2px solid #5EF6FF;
+            transition: .5s all;
+            &:focus {
+               border: 2px solid yellow;
+               box-shadow: 4px 4px 10px 4px yellow;
+               outline: none;
+               background: #3636364f;
+               color: yellow;
+               text-shadow: 0 4px 4px;
+            }
+   
+         }
+         #AddTask {
+            padding: 20px;
+            font-size: 26px;
+            background: transparent;
+            border: 1px solid #5EF6FF;
+            cursor: pointer;
+            transition: .5s all;
+            &:hover {
+               background: #3636364f;
+            }
+            &:focus {
+               border: 2px solid yellow;
+               box-shadow: 4px 4px 10px 4px yellow;
+               background: #3636364f;
+               color: yellow;
+               text-shadow: 0 4px 4px;
+            }
+         }
+   }
+
+   }
+
+   #TasksArea {
+      margin: 50px 0 50px 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      perspective: 500px;
+      #Tasks {
+         border: 2px solid yellow;
+         padding: 20px;
+         display: flex;
+         flex-direction: column;
+         width: 52%;
+         transform: rotatex(10deg);
+         li {
+            border: 1px solid #F75049;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 95%;
+         }
+         span {
+            font-size: 26px;
+            display: flex;
+            gap: 1em;
+            img {
+               width: 30px;
+               border: 2px solid #5EF6FF;
+               padding: 10px;
+               transition: 0.5s all;
+               &:hover {
+                  cursor: pointer;
+                  background: #3636364f;
+                  box-shadow: 4px 4px 4px yellow;
+                  border: 2px solid yellow;
+               }
+            }
+         }
+      }
+   }
+}
+
+
+#redCircle {
+   top: -113px;
+   left: -228px;
+   width: 985px;
+   height: 612px;
+   position: absolute;
+   background-image: url(../../../assets/images/background.svg);
+   z-index: -1;
+}
+

@@ -4,6 +4,8 @@
    font-family: 'Orbitron', sans-serif;
    list-style: none;
    text-decoration: none;
+   color: #F75049;
+   text-shadow: 0 4px 4px;
 }
 
 body, html {
@@ -11,6 +13,12 @@ body, html {
 }
 
 body {
-   overflow: hidden;
-   background: no-repeat center/cover url(../../assets/images/background.gif);
+   position: relative;
+   background: rgb(34, 35, 37);
+}
+
+#app {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
 }

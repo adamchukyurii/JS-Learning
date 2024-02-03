@@ -9,8 +9,25 @@
     <title>ToDo</title>
   </head>
   <body>
+    <div id="redCircle"></div>
     <div id="app">
-      
+      <header id="header"></header>
+      <main id="main">
+        <div id="InputArea">
+          <form onsubmit="AddNewTask(event)">
+            <input type="text" name="Task" id="Task" placeholder="Enter here you task">
+            <input type="text" name="Timer" id="Timer" placeholder="0:00">
+            <input type="submit" value="Add" id="AddTask">
+            </form>
+        </div>
+        <div id="TasksArea">
+          <ul id="Tasks">
+            <li><span id="taskText">New Task</span><span><img src="./assets/icons/pencil.png" alt=""><img src="./assets/icons/bin.png" alt=""></span></li>
+            
+          </ul>
+        </div>
+      </main>
+      <footer id="footer"></footer>
     </div>
     <script type="module" src="/main.js"></script>
   </body>

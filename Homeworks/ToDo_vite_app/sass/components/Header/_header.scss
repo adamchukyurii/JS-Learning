@@ -1,1 +1,15 @@
-@import './components/greeting';
+#header {
+   width: 100%;
+   height: 82px;
+   background: no-repeat bottom center url(../../../assets/icons/headerline.svg);
+   text-align: center;
+   padding: 20px 0 20px 0;
+   background-size: 95% 100%;
+   display: flex;
+   justify-content: center;
+   h1 {
+      background-image: url(../../../assets/images/infobackground.svg);
+      width: fit-content;
+      padding: 20px;
+   }
+}
