@@ -1,5 +1,9 @@
-import { tasks } from "./fancy_task";
-import { AddNewTask } from "./add_new_task";
+import * as Variables from "./variables"
+import * as Functions from "./helper_functions"
 
-export { tasks };
-export { AddNewTask };
+
+
+export const Helpers = {
+   Variables,
+   Functions
+}

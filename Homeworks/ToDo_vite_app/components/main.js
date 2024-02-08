@@ -1,5 +1,8 @@
+import { Helpers } from "../helpers";
+
+const { AddNewTask, DeleteTask } = Helpers.Functions;
+const { task, timer, add_task_btn, delete_task} = Helpers.Variables;
+
 export const Main = () => {
-   const AddNewTask = (event) => {
-      event.preventDefault();
-   }
+   add_task_btn.addEventListener('click', AddNewTask);   
 }

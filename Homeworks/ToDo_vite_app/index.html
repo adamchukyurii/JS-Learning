@@ -14,16 +14,14 @@
       <header id="header"></header>
       <main id="main">
         <div id="InputArea">
-          <form onsubmit="AddNewTask(event)">
-            <input type="text" name="Task" id="Task" placeholder="Enter here you task">
-            <input type="text" name="Timer" id="Timer" placeholder="0:00">
-            <input type="submit" value="Add" id="AddTask">
+          <form>
+            <input type="text" name="Task" id="TaskInput" placeholder="Enter here you task">
+            <input type="text" name="Timer" id="TimerInput" placeholder="Seconds">
+            <input type="button" value="Add" id="AddTask" onclick="AddNewTask(event)">
             </form>
         </div>
         <div id="TasksArea">
           <ul id="Tasks">
-            <li><span id="taskText">New Task</span><span><img src="./assets/icons/pencil.png" alt=""><img src="./assets/icons/bin.png" alt=""></span></li>
-            
           </ul>
         </div>
       </main>

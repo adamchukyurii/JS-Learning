@@ -88,7 +88,7 @@ body {
   gap: 2em;
   color: #fff;
 }
-#main #InputArea form #Task {
+#main #InputArea form #TaskInput {
   width: 100%;
   background: transparent;
   border: 2px solid #5EF6FF;
@@ -97,7 +97,7 @@ body {
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
-#main #InputArea form #Task:focus {
+#main #InputArea form #TaskInput:focus {
   border: 2px solid yellow;
   -webkit-box-shadow: 4px 4px 4px yellow;
           box-shadow: 4px 4px 4px yellow;
@@ -106,16 +106,16 @@ body {
   color: yellow;
   text-shadow: 0 4px 4px;
 }
-#main #InputArea form #Timer {
+#main #InputArea form #TimerInput {
   font-size: 26px;
-  width: 70px;
+  width: 140px;
   padding: 20px;
   background: transparent;
   border: 2px solid #5EF6FF;
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
-#main #InputArea form #Timer:focus {
+#main #InputArea form #TimerInput:focus {
   border: 2px solid yellow;
   -webkit-box-shadow: 4px 4px 10px 4px yellow;
           box-shadow: 4px 4px 10px 4px yellow;
@@ -166,6 +166,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  gap: 20px;
   width: 52%;
   -webkit-transform: rotatex(10deg);
           transform: rotatex(10deg);
@@ -183,6 +184,30 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 95%;
+  position: relative;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+}
+#main #TasksArea #Tasks li .Timer {
+  font-size: 12px;
+  position: absolute;
+  padding: 10px;
+  background: transparent;
+  display: none;
+  right: -5px;
+  top: -30px;
+}
+#main #TasksArea #Tasks li input {
+  width: 100%;
+  background: transparent;
+  border: 2px solid #5EF6FF;
+  padding: 10px;
+}
+#main #TasksArea #Tasks li button {
+  padding: 10px;
+  background: transparent;
+  border: 2px solid #5EF6FF;
+  cursor: pointer;
 }
 #main #TasksArea #Tasks span {
   font-size: 26px;
